@@ -1,2 +1,2 @@
 # XY.OAuth-CSharp
-Third party login plug-in
+Third party login plug-in for .NET
