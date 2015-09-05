@@ -201,3 +201,4 @@ XY.OAuth.Desktop/*
 packages/*
 .gitignore
 /bak/*
+!/bin/*
