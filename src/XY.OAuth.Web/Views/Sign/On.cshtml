@@ -1,0 +1,228 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>微爱好网->>登录</title>
+	<style type="text/css">
+		* {
+			border: 0;
+			padding: 0;
+			margin: 0;
+			text-decoration: none;
+			font-family: 'Microsoft YaHei UI','Microsoft YaHei';
+			font-size: 100%;
+		}
+
+		.body {
+			background: url("/static/images/login/login_bg.jpg");
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+			color: #ffffff;
+		}
+
+		.login {
+			position: absolute;
+			width: 400px;
+			height: 380px;
+			margin-left: -200px;
+			top: 45%;
+			left: 50%;
+			margin-top: -190px;
+		}
+
+			.login .header {
+				width: 400px;
+				height: 40px;
+				background: #0094ff;
+				border-radius: 10px 10px 0 0;
+			}
+
+				.login .header span {
+					display: block;
+					padding-top: 5px;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 22px;
+					line-height: 30px;
+				}
+
+		.login_form {
+			padding-top: 10px;
+			width: 400px;
+			height: 230px;
+			background: #ffffff;
+		}
+
+			.login_form .input {
+				position: relative;
+				width: 360px;
+				height: 45px;
+				margin-left: 20px;
+				margin-top: 10px;
+			}
+
+				.login_form .input span {
+					display: inline-block;
+					width: 45px;
+					height: 45px;
+					border: 1px #efe7e7 solid;
+					border-radius: 5px 0 0 5px;
+				}
+
+				.login_form .input .user {
+					background: #ffffff url("/static/images/login/user-tie.png") no-repeat center center;
+				}
+
+				.login_form .input .password {
+					background: #ffffff url("/static/images/login/key.png") no-repeat center center;
+				}
+
+				.login_form .input .txt {
+					position: absolute;
+					top: 0;
+					width: 313px;
+					height: 45px;
+					line-height: 45px;
+					display: inline;
+					border: 1px #efe7e7 solid;
+					border-left: 0;
+					font-size: 16px;
+					border-radius: 0 5px 5px 0;
+					background: #ffffff;
+					text-indent: 1em;
+				}
+
+			.login_form .submit, .reg {
+				display: inline-block;
+				margin-left: 20px;
+				width: 360px;
+				height: 40px;
+				line-height: 40px;
+				background: #0094ff;
+				text-align: center;
+				font-size: 18px;
+				vertical-align: middle;
+				border-radius: 5px;
+				margin-top: 10px;
+				color: #ffffff;
+			}
+
+			.login_form .login_hover:hover {
+				cursor: pointer;
+				background-color: rgba(0, 148, 255, 0.80);
+			}
+
+		.login .login_btn {
+			padding: 0 20px;
+			width: 360px;
+			height: 70px;
+			background: silver;
+		}
+
+			.login .login_btn li {
+				padding: 4px;
+				float: left;
+				display: block;
+				width: 64px;
+				height: 64px;
+				line-height: 70px;
+			}
+
+				.login .login_btn li a {
+					display: block;
+					line-height: 64px;
+					text-indent: -9999px;
+					border-radius: 32px;
+					background-color: #ff00dc;
+				}
+
+				.login .login_btn li .osc {
+					width: 64px;
+					height: 64px;
+					background: #ffffff url("/static/images/login/osc.png");
+				}
+
+				.login .login_btn li .sina {
+					width: 64px;
+					height: 64px;
+					background: #ffffff url("/static/images/login/sina.png");
+				}
+
+				.login .login_btn li .qq {
+					width: 64px;
+					height: 64px;
+					background: #ffffff url("/static/images/login/qq.png");
+				}
+
+				.login .login_btn li .github {
+					width: 64px;
+					height: 64px;
+					background: #ffffff url("/static/images/login/github.png");
+				}
+
+				.login .login_btn li .baidu {
+					width: 64px;
+					height: 64px;
+					background: #ffffff url("/static/images/login/baidu.png");
+				}
+
+		.login .footer {
+			width: 400px;
+			height: 40px;
+			background: #0094ff;
+			border-radius: 0 0 10px 10px;
+		}
+
+			.login .footer span {
+				display: block;
+				padding-top: 5px;
+				vertical-align: middle;
+				text-align: center;
+				font-size: 18px;
+				line-height: 30px;
+			}
+	</style>
+</head>
+<body class="body">
+	<div class="login">
+		<div class="header">
+			<span>用户登录</span>
+		</div>
+		<div class="login_form">
+			<form>
+				<div class="input">
+					<span class="user"></span>
+					<input type="text" class="txt" placeholder="用户名或邮箱" />
+				</div>
+				<div class="input">
+					<span class="password"></span>
+					<input class="txt" type="password" placeholder="密 码" />
+				</div>
+				<input class="submit login_hover" type="button" value="马上登录" />
+				@*<a class="reg login_hover" href="#">还没有账号?去注册</a>*@
+				@Html.ActionLink("没有账号?去注册", "In", "Sign", null, new { target = "_blank", title = "没有账号?去注册", @class = "reg login_hover" })
+			</form>
+		</div>
+		<div class="login_btn">
+			<ul>
+				<li>@Html.ActionLink("开源中国", "OSC", "Login", null, new { target = "_blank", title = "开源中国", @class = "btn osc" })</li>
+				<li>@Html.ActionLink("QQ", "QQ", "Login", null, new { target = "_blank", title = "QQ", @class = "btn qq" })</li>
+				<li>@Html.ActionLink("新浪微博", "Sina", "Login", null, new { target = "_blank", title = "新浪微博", @class = "btn sina" })</li>
+				<li>@Html.ActionLink("GitHub", "Github", "Login", null, new { target = "_blank", title = "GitHub", @class = "btn github" })</li>
+				<li>@Html.ActionLink("百度", "Baidu", "Login", null, new { target = "_blank", title = "百度", @class = "btn baidu" })</li>
+			</ul>
+		</div>
+		<div class="footer">
+			<span>您还可以通过上面方式直接登录</span>
+		</div>
+	</div>
+</body>
+</html>
