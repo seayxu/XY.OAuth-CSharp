@@ -200,3 +200,4 @@ XY.OAuth.Test/*
 XY.OAuth.Desktop/*
 packages/*
 .gitignore
+/bak/*
