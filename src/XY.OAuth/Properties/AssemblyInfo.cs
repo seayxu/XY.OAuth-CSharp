@@ -12,7 +12,7 @@ using System.Resources;
 [assembly: AssemblyCompany("seay.me")]
 [assembly: AssemblyProduct("XY.OAuth")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
-[assembly: AssemblyTrademark("Copyright XY.OAuth")]
+[assembly: AssemblyTrademark("Copyright Seay")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型
@@ -33,6 +33,6 @@ using System.Resources;
 // 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: 
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.40.0")]
-[assembly: AssemblyFileVersion("0.1.40.0")]
+[assembly: AssemblyVersion("0.1.1.35")]
+[assembly: AssemblyFileVersion("0.1.1.35")]
 [assembly: NeutralResourcesLanguageAttribute("zh-Hans")]

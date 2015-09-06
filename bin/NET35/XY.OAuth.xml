@@ -1,0 +1,614 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XY.OAuth</name>
+    </assembly>
+    <members>
+        <member name="F:XY.OAuth.BaiduOAuth.BasetUrl">
+            <summary>
+            基本的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.AuthorizeUrl">
+            <summary>
+            请求的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.TokenUrl">
+            <summary>
+            验证口令的接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.UserBaseInfoUrl">
+            <summary>
+            获取登录用户基本信息接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.UserDetailInfoUrl">
+            <summary>
+            获取指定用户基本信息接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.State">
+            <summary>
+            client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Access_Token">
+            <summary>
+            要获取的Access Token
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Refresh_Token">
+            <summary>
+            refresh_token值
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Expires_In">
+            <summary>
+            Access Token的有效期，以秒为单位
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Session_Secret">
+            <summary>
+            基于http调用Social API时计算参数签名用的签名密钥
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Session_Key">
+            <summary>
+            基于http调用Social API时所需要的Session Key，其有效期与Access Token一致
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Scope">
+            <summary>
+            scope
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.UID">
+            <summary>
+            当前登录用户的数字ID
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.UName">
+            <summary>
+            当前登录用户的用户名，值可能为空
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.Portrait">
+            <summary>
+            当前登录用户的头像
+            small image: http://tb.himg.baidu.com/sys/portraitn/item/{$portrait} 
+            large image: http://tb.himg.baidu.com/sys/portrait/item/{$portrait}
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.BaiduOAuth.UserInfo">
+            <summary>
+            百度用户基本信息类
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.BaiduOAuth.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.BaiduOAuth.AuthorizeURL(System.Int32)">
+            <summary>
+            生成授权请求URL
+            </summary>
+            <param name="displayType">
+            0->page：全屏形式的授权页面(默认)，适用于web应用。
+            1->popup: 弹框形式的授权页面，适用于桌面软件应用和web应用。
+            2->dialog:浮层形式的授权页面，只能用于站内web应用。
+            3->mobile: Iphone/Android等智能移动终端上用的授权页面，适用于Iphone/Android等智能移动终端上的应用。
+            4->tv: 电视等超大显示屏使用的授权页面。
+            5->pad: IPad/Android等智能平板电脑使用的授权页面。
+            </param>
+            <returns>授权请求URL</returns>
+        </member>
+        <member name="M:XY.OAuth.BaiduOAuth.Token(System.String,System.String)">
+            <summary>
+            获取Token
+            </summary>
+            <param name="code">调用authorize获得的code值</param>
+            <param name="state">成功授权后回调时会原样带回client端的状态值</param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:XY.OAuth.BaiduOAuth.GetUserInfo">
+            <summary>
+            获取用户基本信息
+            </summary>
+            <returns>用户基本信息</returns>
+        </member>
+        <member name="T:XY.OAuth.QQOAuth">
+            <summary>
+            QQ授权类
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.BaseUrl">
+            <summary>
+            基本的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.BaseUrl_WAP">
+            <summary>
+            基本的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.AuthorizeUrl">
+            <summary>
+            请求的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.AuthorizeUrl_WAP">
+            <summary>
+            WAP请求的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.TokenUrl">
+            <summary>
+            验证口令的接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.TokenUrl_WAP">
+            <summary>
+            WAP验证口令的接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.OpenIDUrl">
+            <summary>
+            获取用户OpenID的接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.OpenIDUrl_WAP">
+            <summary>
+            WAP获取用户OpenID的接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.UserBaseInfoUrl">
+            <summary>
+            获取用户基本信息接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.State">
+            <summary>
+            client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.Access_Token">
+            <summary>
+            access_token值
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.Expires_In">
+            <summary>
+            超时时间(单位秒)
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.Refresh_Token">
+            <summary>
+            在授权自动续期步骤中，获取新的Access_Token时需要提供的参数。
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.Open_ID">
+            <summary>
+            用户OpenID
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.QQOAuth.UserInfo">
+            <summary>
+            用户信息类
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.QQOAuth.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.QQOAuth.AuthorizeURL(System.String)">
+            <summary>
+            生成授权请求URL
+            </summary>
+            <param name="device">仅PC网站接入时使用。用于展示的样式。不传则默认展示为PC下的样式。如果传入“mobile”|“wap”，则展示为mobile端下的样式。</param>
+            <returns>授权请求URL</returns>
+        </member>
+        <member name="M:XY.OAuth.QQOAuth.Token(System.String,System.String)">
+            <summary>
+            获取Token
+            </summary>
+            <param name="code">如果用户成功登录并授权，则会跳转到指定的回调地址，并在URL中带上Authorization Code。例如，回调地址为www.qq.com/my.php，则跳转到：http://www.qq.com/my.php?code=520DD95263C1CFEA087****** 注意此code会在10分钟内过期。</param>
+            <param name="state">client端的状态值。用于第三方应用防止CSRF攻击。</param>
+            <returns></returns>
+        </member>
+        <member name="M:XY.OAuth.QQOAuth.OpenID">
+            <summary>
+            获取用户OpenID
+            </summary>
+            <returns>用户OpenID</returns>
+        </member>
+        <member name="M:XY.OAuth.QQOAuth.GetUserInfo">
+            <summary>
+            获取用户基本信息
+            </summary>
+            <returns>用户基本信息对象</returns>
+        </member>
+        <member name="T:XY.OAuth.Model.QQUserInfo">
+            <summary>
+            QQ信息对象
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.NickName">
+            <summary>
+            用户在QQ空间的昵称
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.FigureURL">
+            <summary>
+            大小为30×30像素的QQ空间头像URL
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.FigureURL_1">
+            <summary>
+            大小为50×50像素的QQ空间头像URL
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.FigureURL_2">
+            <summary>
+            大小为100×100像素的QQ空间头像URL
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.FigureURL_QQ_1">
+            <summary>
+            大小为40×40像素的QQ头像URL
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.FigureURL_QQ_2">
+            <summary>
+            大小为100×100像素的QQ头像URL。需要注意，不是所有的用户都拥有QQ的100x100的头像，但40x40像素则是一定会有
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.Gender">
+            <summary>
+            性别。 如果获取不到则默认返回"男"
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.Is_Yellow_VIP">
+            <summary>
+            标识用户是否为黄钻用户（0：不是；1：是）
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.Yellow_VIP_Level">
+            <summary>
+            黄钻等级
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Model.QQUserInfo.Is_Yellow_Year_VIP">
+            <summary>
+            标识是否为年费黄钻用户（0：不是； 1：是）
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.Conf.GetDictionary(System.String,System.Object[])">
+            <summary>
+            GET方式获取字典集合
+            </summary>
+            <param name="url"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XY.OAuth.Conf.PostDictionary(System.String,System.Object[])">
+            <summary>
+            POST方式获取字典集合
+            </summary>
+            <param name="url"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XY.OAuth.Conf.OSC_Client_ID">
+            <summary>
+            开源中国应用OAuth2ID
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.OSC_Client_Secret">
+            <summary>
+            开源中国应用OAuth2密钥
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.OSC_Callback_URL">
+            <summary>
+            开源中国应用回掉地址
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.Sina_Client_ID">
+            <summary>
+            新浪微博应用OAuth2ID
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.Sina_Client_Secret">
+            <summary>
+            新浪微博应用OAuth2密钥
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.Sina_Callback_URL">
+            <summary>
+            新浪微博应用回掉地址
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.QQ_Client_ID">
+            <summary>
+            腾讯QQ应用OAuth2ID
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.QQ_Client_Secret">
+            <summary>
+            腾讯QQ应用OAuth2密钥
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.QQ_Callback_URL">
+            <summary>
+            腾讯QQ应用回掉地址
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.Baidu_Client_ID">
+            <summary>
+            百度应用OAuth2ID
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.Baidu_Client_Secret">
+            <summary>
+            百度应用OAuth2密钥
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.Baidu_Callback_URL">
+            <summary>
+            百度应用回掉地址
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.GitHub_Client_ID">
+            <summary>
+            GitHub应用OAuth2ID
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.GitHub_Client_Secret">
+            <summary>
+            GitHub应用OAuth2密钥
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.GitHub_Callback_URL">
+            <summary>
+            GitHub应用回掉地址
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.FaceBook_Client_ID">
+            <summary>
+            FaceBook应用OAuth2ID
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.FaceBook_Client_Secret">
+            <summary>
+            FaceBook应用OAuth2密钥
+            </summary>
+        </member>
+        <member name="P:XY.OAuth.Conf.FaceBook_Callback_URL">
+            <summary>
+            FaceBook应用回掉地址
+            </summary>
+        </member>
+        <member name="T:XY.OAuth.SinaOAuth">
+            <summary>
+            新浪微博授权类
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.BasetUrl">
+            <summary>
+            基本的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.AuthorizeUrl">
+            <summary>
+            请求的URL
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.TokenUrl">
+            <summary>
+            验证口令的接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.UserBaseInfoUrl">
+            <summary>
+            获取用户基本信息接口
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.State">
+            <summary>
+            client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.Access_Token">
+            <summary>
+            access_token值
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.Expires_In">
+            <summary>
+            超时时间(单位秒)
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.UID">
+            <summary>
+            授权用户的uid
+            </summary>
+        </member>
+        <member name="F:XY.OAuth.SinaOAuth.UserInfo">
+            <summary>
+            用户信息类
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.SinaOAuth.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.SinaOAuth.AuthorizeURL(System.String,System.Boolean)">
+            <summary>
+            生成请求URL
+            </summary>
+            <param name="display">
+            display说明：
+            参数取值	类型说明
+            default	默认的授权页面，适用于web浏览器。
+            mobile	移动终端的授权页面，适用于支持html5的手机。注：使用此版授权页请用 https://open.weibo.cn/oauth2/authorize 授权接口
+            wap	wap版授权页面，适用于非智能手机。
+            client	客户端版本授权页面，适用于PC桌面应用。
+            apponweibo	默认的站内应用授权页，授权后不返回access_token，只刷新站内应用父框架。
+            </param>
+            <param name="forcelogin">是否强制用户重新登录，true：是，false：否。默认false。</param>
+            <returns>授权请求URL</returns>
+        </member>
+        <member name="M:XY.OAuth.SinaOAuth.Token(System.String,System.String)">
+            <summary>
+            获取Token
+            </summary>
+            <param name="code">调用authorize获得的code值</param>
+            <param name="state">成功授权后回调时会原样带回client端的状态值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XY.OAuth.SinaOAuth.GetUserInfo">
+            <summary>
+            获取用户基本信息
+            </summary>
+            <returns>用户基本信息类</returns>
+        </member>
+        <member name="T:XY.OAuth.Model.SinaUserInfo">
+            <summary>
+            新浪微博用户信息类
+            </summary>
+        </member>
+        <member name="M:XY.OAuth.Utility.Common.GetRandom">
+            <summary>
+            获取6位的随机数
+            </summary>
+            <returns>6位的随机数</returns>
+        </member>
+        <!-- 对于成员“M:XY.Utility.Http.Get(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:XY.Utility.Http.Get(System.String,System.Text.Encoding,System.Nullable{System.Int32},System.String,System.Net.CookieCollection)">
+            <summary>
+            GET请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="encoding">字符集编码，默认UTF-8</param>
+            <param name="timeout">超时的时间，单是秒</param>
+            <param name="userAgent">代理字符串</param>
+            <param name="cookies">Cookie设置</param>
+            <returns>返回字符串</returns>
+        </member>
+        <member name="M:XY.Utility.Http.CreateGetHttpResponse(System.String,System.Nullable{System.Int32},System.String,System.Net.CookieCollection)">
+            <summary>  
+            创建GET方式的HTTP请求  
+            </summary>  
+            <param name="url">请求的URL</param>  
+            <param name="timeout">请求的超时时间</param>  
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>  
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>  
+            <returns></returns>  
+        </member>
+        <!-- 对于成员“M:XY.Utility.Http.Post(System.String,System.Text.Encoding)”忽略有格式错误的 XML 注释 -->
+        <member name="M:XY.Utility.Http.Post(System.String,System.Object,System.Text.Encoding)">
+            <summary>
+            POST请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="dict">参数对象</param>
+            <returns>返回字符串</returns>
+            <example>
+            Http.Post("http://api.vaihao.com",new{id="1234",name="seay"})
+            </example>
+        </member>
+        <member name="M:XY.Utility.Http.Post(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Text.Encoding,System.Nullable{System.Int32},System.String,System.Net.CookieCollection)">
+            <summary>
+            POST请求
+            </summary>
+            <param name="url">请求的URL</param>
+            <param name="parameters">请求的参数</param>
+            <param name="encoding">字符集编码，默认UTF-8</param>
+            <param name="timeout">超时的时间，单是秒</param>
+            <param name="userAgent">代理字符串</param>
+            <param name="cookies">Cookie设置</param>
+            <returns>返回字符串</returns>
+        </member>
+        <member name="M:XY.Utility.Http.CreatePostHttpResponse(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Nullable{System.Int32},System.String,System.Text.Encoding,System.Net.CookieCollection)">
+            <summary>  
+            创建POST方式的HTTP请求  
+            </summary>  
+            <param name="url">请求的URL</param>  
+            <param name="parameters">随同请求POST的参数名称及参数值字典</param>  
+            <param name="timeout">请求的超时时间</param>  
+            <param name="userAgent">请求的客户端浏览器信息，可以为空</param>  
+            <param name="requestEncoding">发送HTTP请求时所用的编码</param>  
+            <param name="cookies">随同HTTP请求发送的Cookie信息，如果不需要身份验证可以为空</param>  
+            <returns></returns>  
+        </member>
+        <member name="T:XY.Utility.JsonHelper">
+            <summary>
+            JSON操作助手类
+            </summary>
+            <remarks>
+             2015-08-31 15:05 Created By SeayXu
+            </remarks>
+        </member>
+        <member name="F:XY.Utility.JsonHelper.JsonSerializer">
+            <summary>
+            The json serializer
+            </summary>
+        </member>
+        <member name="M:XY.Utility.JsonHelper.Serialize(System.Object)">
+            <summary>
+            将一个对象序列化JSON字符串
+            </summary>
+            <remarks>
+             2015-08-31 15:05 Created By SeayXu
+            </remarks>
+            <param name="obj">待序列化的对象</param>
+            <returns>JSON字符串</returns>
+        </member>
+        <member name="M:XY.Utility.JsonHelper.Deserialize(System.String)">
+            <summary>
+            将JSON字符串反序列化为一个Object对象
+            </summary>
+            <remarks>
+             2015-08-31 15:05 Created By SeayXu
+            </remarks>
+            <param name="json">JSON字符串</param>
+            <returns>Object对象</returns>
+        </member>
+        <member name="M:XY.Utility.JsonHelper.Deserialize``1(System.String)">
+            <summary>
+            将JSON字符串反序列化为一个指定类型对象
+            </summary>
+            <remarks>
+             2015-08-31 15:05 Created By SeayXu
+            </remarks>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">JSON字符串</param>
+            <returns>指定类型对象</returns>
+        </member>
+        <member name="M:XY.Utility.JsonHelper.DeserializeObject(System.String)">
+            <summary>
+            将JSON字符串反序列化为一个JObject对象
+            </summary>
+            <remarks>
+             2015-08-31 15:05 Created By SeayXu
+            </remarks>
+            <param name="json">JSON字符串</param>
+            <returns>JObject对象</returns>
+        </member>
+        <member name="M:XY.Utility.JsonHelper.DeserializeArray(System.String)">
+            <summary>
+            将JSON字符串反序列化为一个JArray数组
+            </summary>
+            <remarks>
+             2015-08-31 15:05 Created By SeayXu
+            </remarks>
+            <param name="json">JSON字符串</param>
+            <returns>JArray对象</returns>
+        </member>
+    </members>
+</doc>
